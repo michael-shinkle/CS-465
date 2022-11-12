@@ -1,25 +1,26 @@
 <div id="footer">
     <div>
         <ul class="navigation">
-            <li>
+            {{!-- ifCond handlebars helper to highlight correct page in footer navbar --}}
+            {{#ifCond page "index"}} <li class="active"> {{else}} <li> {{/ifCond}}
                 <a href="/index">Home</a>
             </li>
-            <li class="active">
+            {{#ifCond page "travel"}} <li class="active"> {{else}} <li> {{/ifCond}}
                 <a href='“/travel"'>Travel</a>
             </li>
-            <li>
+            {{#ifCond page "rooms"}} <li class="active"> {{else}} <li> {{/ifCond}}
                 <a href="/rooms">Rooms</a>
             </li>
-            <li>
-                <a href='“/meals"'>Meals</a>
+            {{#ifCond page "meals"}} <li class="active"> {{else}} <li> {{/ifCond}}
+                <a href='/meals'>Meals</a>
             </li>
-            <li>
+            {{#ifCond page "news"}} <li class="active"> {{else}} <li> {{/ifCond}}
                 <a href="/news">News</a>
             </li>
-            <li>
+            {{#ifCond page "about"}} <li class="active"> {{else}} <li> {{/ifCond}}
                 <a href="/about">About</a>
             </li>
-            <li>
+            {{#ifCond page "contact"}} <li class="active"> {{else}} <li> {{/ifCond}}
                 <a href="/contact">Contact</a>
             </li>
         </ul>

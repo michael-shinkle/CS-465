@@ -3,5 +3,5 @@ const router = express.Router();
 const controller= require('../controllers/about');
 
 /* GET home page. */
-router.get('/about', controller.about);
+router.get('/', controller.about);
 module.exports = router

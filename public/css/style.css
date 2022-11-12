@@ -147,6 +147,7 @@ img {
 #adbox {
 	background: url(../images/bg-adbox.png) no-repeat left top;
 	width: 852px;
+	height: 100px;
 	margin: 0 auto;
 	padding: 4px 5px 18px;
 }

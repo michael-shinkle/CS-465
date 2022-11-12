@@ -9,7 +9,7 @@
 <body>
 	<div id="background">
 		<div id="page">
-			{{< header}}
+			{{> header page="meals"}}
 			<div id="contents">
 				<div class="box">
 					<div>
@@ -17,39 +17,20 @@
 							<h1>Meals</h1>
 							<ul id="foods">
 								<li>
-									<h2><a href="meals.html">SeaFood Special</a></h2>
+			{{#each meal}}
+									<h2><a href={{this.link}}>{{this.name}}</a></h2>
 									<div class="infos">
-										<a href="meals.html"><img src="images/seafoods.jpg" alt="Img" height="169" width="780"><span class="cover"></span></a>
-										<p>
-											<span>Fried Salmon Special</span> I'm a product overview. Here you can write more information about your product. Buyers like to know ...
-										</p>
+										<a href={{this.link}}><img src="images/{{this.image}}" alt="Img" height="169" width="780"><span class="cover"></span></a>
+										{{{this.description}}}
 									</div>
-								</li>
-								<li>
-									<h2><a href="meals.html">Sumptuous Desserts</a></h2>
-									<div class="infos">
-										<a href="meals.html"><img src="images/desserts.jpg" alt="Img" height="169" width="780"><span class="cover"></span></a>
-										<p>
-											<span>Choco Ice Cream Sandwich</span> I'm a product overview. Here you can write more information about your product. Buyers like to know ...
-										</p>
-									</div>
-								</li>
-								<li>
-									<h2><a href="meals.html">Buffet</a></h2>
-									<div class="infos">
-										<a href="meals.html"><img src="images/buffet.jpg" alt="Img" height="169" width="780"><span class="cover"></span></a>
-										<p>
-											<span>Mixed Buffet</span> I'm a product overview. Here you can write more information about your product. Buyers like to know ...
-										</p>
-									</div>
-								</li>
+			{{/each}}
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		{{< footer}}
+		{{> footer page="meals"}}
 	</div>
 </body>
 </html>

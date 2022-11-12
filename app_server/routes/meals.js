@@ -3,5 +3,5 @@ const router = express.Router();
 const controller= require('../controllers/meals');
 
 /* GET home page. */
-router.get('/meals', controller.meals);
+router.get('/', controller.meals);
 module.exports = router

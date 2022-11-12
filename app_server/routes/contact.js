@@ -3,5 +3,5 @@ const router = express.Router();
 const controller= require('../controllers/contact');
 
 /* GET home page. */
-router.get('/contact', controller.contact);
+router.get('/', controller.contact);
 module.exports = router
