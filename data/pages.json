@@ -1,12 +1,17 @@
-[
-    {
+{
+    "1": {
+        "code": "ROOMS",
         "image": "rooms.png",
         "link": "/rooms"
-    },  {
+    },  
+    "2": {
+        "code": "DIVING",
         "image": "dive-site.png",
         "link": "/travel"
-    },  {
+    },  
+    "3": {
+        "code": "FOOD",
         "image": "food.png",
         "link": "/meals"
     }
-]
+}

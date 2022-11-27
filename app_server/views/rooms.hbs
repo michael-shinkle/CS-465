@@ -16,9 +16,9 @@
 						<div class="body">
 							<h1>Rooms</h1>
 							<ul id="rooms">
-			{{#each room}}
+			{{#each rooms}}
 								<li>
-									<a href={{this.link}}><img src='images/{{this.image}}' alt='Img'></a>
+									<a href="/api/rooms/{{this.code}}"><img src='images/{{this.image}}' alt='Img'></a>
 									<h2><a href={{this.link}}>{{this.name}}</a></h2>
 									{{{this.description}}}
 									<span class="rate">{{this.rate}}</span>

@@ -1,7 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const controller= require('../controllers/news');
+const controller = require("../controllers/news");
 
 /* GET home page. */
-router.get('/', controller.news);
-module.exports = router
+console.log("yay")
+router.get("/", controller.newsView);
+module.exports = router;

@@ -17,9 +17,9 @@
 							<div>
 								<h3>Latest Blog</h3>
 								<ul>
-			{{#each blog}}
+			{{#each blogs}}
 									<li>
-										<h4><a href={{this.link}}>{{this.title}}</a></h4>
+										<h4><a href="/api/blogs/{{this.code}}">{{this.title}}</a></h4>
 										<span>{{this.date}}</span>
 										{{{this.content}}}
 									</li>
@@ -32,15 +32,15 @@
 						<div>
 							<div>
 								<h3>Testimonials</h3>
-			{{#each testimonial}}
-								<p>{{this.content}}<span>- <a href={{this.link}}>{{this.author}}</a></span></p>
+			{{#each testimonials}}
+								<p>{{this.content}}<span>- <a href="/api/testimonials/{{this.code}}">{{this.author}}</a></span></p>
 			{{/each}}
 							</div>
 						</div>
 					</div>
 				</div>
 				<div id="sidebar">
-			{{#each page}}
+			{{#each pages}}
 					<div class="section">
 						<a href={{this.link}}><img src="images/{{this.image}}" alt="Img"></a>
 					</div>

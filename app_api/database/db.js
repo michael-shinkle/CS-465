@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const host = process.env.DB_HOST || '127.0.0.1';
-const dbURI = `mongodb:${host}/travlr`;
+const dbURI = `mongodb://${host}/travlr`;
 const readLine = require('readline');
 
 // avoid current server discovery and monitoring engine is deprecated
@@ -65,4 +65,12 @@ process.on('SIGTERM', () => {
 
 connect();
 
-require('./models/travlr');
+require('./models/rooms');
+require('./models/trips');
+require('./models/articles');
+require('./models/blogs');
+require('./models/latestNews');
+require('./models/meals');
+require('./models/pages');
+require('./models/testimonials');
+require('./models/vacationTips');

@@ -1,21 +1,32 @@
-[
-    {
+{
+    "1": {
+        "code": "BEACHTIPS",
         "name": "Vacation Tips What to bring on the beach?",
         "link": "/news"
-    },  {
+    }, 
+    "2": {
+        "code": "ACTIVITYTIPS",
         "name": "Vacation Tips Planning Fun Activities",
         "link": "/news"
-    },  {
+    },  
+    "3": {
+        "code": "DIVINGCHECKLIST",
         "name": "Vacation Tips Diving Checklist",
         "link": "/news"
-    },  {
+    },  
+    "4": {
+        "code": "FIRSTAID",
         "name": "Vacation Tips First Aid",
         "link": "/news"
-    },  {
+    },  
+    "5": {
+        "code": "SANDCASTLE",
         "name": "Vacation Tips How to Build a Sand Castle?",
         "link": "/news"
-    },  {
+    },  
+    "6": {
+        "code": "TANNINGTIPS",
         "name": "Vacation Tips Tanning Tips",
         "link": "/news"
     }
-]  
+}

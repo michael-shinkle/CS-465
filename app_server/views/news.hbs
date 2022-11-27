@@ -19,7 +19,7 @@
 								<ul>
 			{{#each latestNews}}
 									<li>
-										<a href={{this.link}}>{{this.name}}</a>
+										<a href="/api/latestNews/{{this.code}}">{{this.name}}</a>
 									</li>
 			{{/each}}
 								</ul>
@@ -27,16 +27,16 @@
 								<ul>
 			{{#each vacationTips}}
 									<li>
-										<a href={{this.link}}>{{this.name}}</a>
+										<a href="/api/vacationTips/{{this.code}}">{{this.name}}</a>
 									</li>
 			{{/each}}
 								</ul>
 							</div>
 							<div>
 								<h1>News</h1>
-			{{#each article}}
+			{{#each articles}}
 								<img src="images/{{this.image}}" alt="Img">
-								<h2>{{this.title}}</h2>
+								<h2><a href="/api/articles/{{this.code}}">{{this.title}}</a></h2>
 								<span class="time">{{this.date}}<br> by: {{this.author}}</span>
 								{{{this.content}}}
 			{{/each}}

@@ -1,15 +1,22 @@
-[
-    {
+{
+    "1": {
+        "code": "WINNERS2023",
         "name": "Latest News 2023 Best Beaches Contest Winners",
         "link": "/news"
-    }, {
+    },
+    "2": {
+        "code": "DIVING2023",
         "name": "Latest News Top 10 Diving Spots",
         "link": "/news"
-    }, {
+    }, 
+    "3": {
+        "code": "FISHING2023",
         "name": "Latest News Fishing ban to be implemented this year",
         "link": "/news"
-    }, {
+    }, 
+    "4": {
+        "code": "LIFEGUARD2023",
         "name": "Latest News Lifeguard saves child from drowning",
         "link": "/news"
     }
-]
+}
