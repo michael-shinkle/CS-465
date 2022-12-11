@@ -1,0 +1,9 @@
+<div class="container" *ngIf="!isLoggedIn()">Please login to continue</div>
+<div class="container" *ngIf="isLoggedIn()">
+  <div>
+    <button (click)="navTrips()" class="btn btn-info">Trip Listing</button>
+  </div>
+  <div>
+    <button (click)="navRooms()" class="btn btn-info">Room Listing</button>
+  </div>
+</div>

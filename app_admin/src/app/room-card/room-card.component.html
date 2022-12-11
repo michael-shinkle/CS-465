@@ -1,0 +1,21 @@
+<div class="card ml-4" style="width: 18rem">
+  <div class="card-header">{{ room.code }}</div>
+  <img
+    src="assets/images/{{ room.image }}"
+    alt="trip thumbnail"
+    class="card-img-top"
+  />
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">
+     {{ room.name }} 
+    </h6>
+    <p class="card-subtitle mt-3 mb-2 text-muted">
+     {{ room.rate }} 
+    </p>
+    <p class="card-text" [innerHTML]="room.description"></p>
+    <div *ngIf="isLoggedIn()" style="width:auto; margin: 0 auto; text-align: center;">
+      <button (click)="editRoom(room)" class="btn btn-info" style="width: 100px; margin-right: 20px;" >Edit</button>
+      <button (click)="deleteRoom(room)" class="btn btn-info" style="width: 100px;">Delete</button>
+    </div>
+  </div>
+</div>

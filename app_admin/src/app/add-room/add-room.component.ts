@@ -1,17 +1,15 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { TripDataService } from "../services/trip-data.service";
+import { RoomDataService } from '../services/room-data.service';
 import { AuthenticationService } from "../services/authentication.service";
 
-
 @Component({
-  selector: "app-add-trip",
-  templateUrl: "./add-trip.component.html",
-  styleUrls: ["./add-trip.component.css"],
+  selector: 'app-add-room',
+  templateUrl: './add-room.component.html',
+  styleUrls: ['./add-room.component.css']
 })
-
-export class AddTripComponent implements OnInit {
+export class AddRoomComponent implements OnInit {
 
   addForm: FormGroup;
   submitted = false;
@@ -21,38 +19,36 @@ export class AddTripComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private tripService: TripDataService,
+    private roomService: RoomDataService,
     private authenticationService: AuthenticationService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       _id: [],
       code: ["", Validators.required],
       name: ["", Validators.required],
-      length: ["", Validators.required],
-      start: [, Validators.required],
-      resort: ["", Validators.required],
-      perPerson: ["", Validators.required],
+      rate: ["", Validators.required],
       image: ["", Validators.required],
       description: ["", Validators.required],
       link: ["", Validators.required],
     });
   }
+
   onSubmit() {
     this.submitted = true;
-    if (this.addForm.valid) {
-      this.credentials=this.authenticationService.getCurrentUser();
+    if (this.addForm.valid){
+      this.credentials = this.authenticationService.getCurrentUser();
       const token = this.authenticationService.getToken();
-      this.tripService.addTrip(this.addForm.value, this.credentials, token).then((data) => {
+      this.roomService.addRoom(this.addForm.value, this.credentials, token).then((data) => {
         console.log(data);
-        this.router.navigate(["list-trips"]);
-      });
+        this.router.navigate(["list-rooms"]);
+      })
     }
-  } 
-  
-  // get the form short name to access the form fields
+  }
+
   get f() {
     return this.addForm.controls;
   }
+
 }

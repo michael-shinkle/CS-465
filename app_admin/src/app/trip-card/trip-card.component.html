@@ -12,8 +12,9 @@
       person
     </p>
     <p class="card-text" [innerHTML]="trip.description"></p>
-    <div>
-      <button (click)="editTrip(trip)" class="btn btn-info">Edit</button>
+    <div *ngIf="isLoggedIn()" style="width:auto; margin: 0 auto; text-align: center;">
+      <button (click)="editTrip(trip)" class="btn btn-info" style="width: 100px; margin-right: 20px;" >Edit</button>
+      <button (click)="deleteTrip(trip)" class="btn btn-info" style="width: 100px;">Delete</button>
     </div>
   </div>
 </div>

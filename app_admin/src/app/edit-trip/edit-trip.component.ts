@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { TripDataService } from "../services/trip-data.service";
+import { AuthenticationService } from "../services/authentication.service";
 
 @Component({
   selector: "app-edit-trip",
@@ -12,17 +13,20 @@ export class EditTripComponent implements OnInit {
   editForm: FormGroup;
   submitted = false;
 
+  public credentials = { name: "", email: ""};
+
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private tripService: TripDataService
+    private tripService: TripDataService,
+    private authenticationService: AuthenticationService
   ) {}
 
   ngOnInit() {
     // retrieve stashed tripID
     let tripString = localStorage.getItem("trip");
     let trip = JSON.parse(tripString);
-    console.log(trip);
+    
     if (!trip) {
       alert("something wrong, couldn't find where I stashed tripCode!");
       this.router.navigate([""]);
@@ -44,7 +48,6 @@ export class EditTripComponent implements OnInit {
     });
 
     this.tripService.getTrip(trip.code).then((data) => {
-      console.log(data);
       // don't use editFrom.setValue() as it will throw console error
       this.editForm.patchValue(data);
     });
@@ -53,9 +56,10 @@ export class EditTripComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.editForm.valid) {
-      this.tripService.updateTrip(this.editForm.value).then((data) => {
-        console.log(data);
-        this.router.navigate([""]);
+      this.credentials=this.authenticationService.getCurrentUser();
+      const token = this.authenticationService.getToken();
+      this.tripService.updateTrip(this.editForm.value, this.credentials, token).then((data) => {
+        this.router.navigate(["list-trips"]);
       });
     }
   }

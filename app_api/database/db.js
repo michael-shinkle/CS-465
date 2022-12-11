@@ -74,3 +74,4 @@ require('./models/meals');
 require('./models/pages');
 require('./models/testimonials');
 require('./models/vacationTips');
+require('./models/user')
