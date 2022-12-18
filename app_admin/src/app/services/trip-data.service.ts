@@ -29,11 +29,9 @@ export class TripDataService {
 
   public addTrip(formData: Trip, user: User, token: string): Promise<Trip> {
     console.log("Inside TripDataService#addTrip");
-    
     // add bearer token to authorization header
     let headers = new Headers();
     headers.set("Authorization", "Bearer " + token);
-
     return this.http
       .post(this.tripUrl, formData, { headers: headers })
       .toPromise()
