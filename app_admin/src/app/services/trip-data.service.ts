@@ -27,7 +27,7 @@ export class TripDataService {
       .catch(this.handleError);
   }
 
-  public addTrip(formData: Trip, user: User, token: string): Promise<Trip> {
+  public addTrip(formData: Trip, token: string): Promise<Trip> {
     console.log("Inside TripDataService#addTrip");
     // add bearer token to authorization header
     let headers = new Headers();

@@ -16,7 +16,7 @@ export class AddTripComponent implements OnInit {
   addForm: FormGroup;
   submitted = false;
 
-  public credentials = { name: "", email: ""};
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,9 +42,9 @@ export class AddTripComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.addForm.valid) {
-      this.credentials=this.authenticationService.getCurrentUser();
+
       const token = this.authenticationService.getToken();
-      this.tripService.addTrip(this.addForm.value, this.credentials, token).then((data) => {
+      this.tripService.addTrip(this.addForm.value, token).then((data) => {
         console.log(data);
         this.router.navigate(["list-trips"]);
       });
